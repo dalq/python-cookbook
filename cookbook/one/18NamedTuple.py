@@ -24,7 +24,7 @@ Stock = namedtuple('Stock', ['name', 'shares', 'price'])
 def compute_cost2(records):
     total = 0.0
     for rec in records:
-        s = Stock(*rec) ##todo ??
+        s = Stock(*rec) ##todo 类似于java中的省略符号... see 2SplitArbitrarySequence.py
         total += s.shares * s.price
     return total
 
