@@ -6,7 +6,7 @@ from collections import Counter
 
 # 方法一：浪费内存
 potholes_by_zip = Counter()
-doc = parse('stocks.xml')
+doc = parse('./res/stocks.xml')
 for pothole in doc.iterfind('channel/item'):
     potholes_by_zip[pothole.findtext('zip')] += 1
 for zipcode, num in potholes_by_zip.most_common():
@@ -42,7 +42,7 @@ def parse_and_remove(filename, path):
 
 # todo why it doesn't work
 potholes_by_zip_2 = Counter()
-data = parse_and_remove('stocks.xml', 'channel/item')
+data = parse_and_remove('./res/stocks.xml', 'channel/item')
 for pothole in data:
     potholes_by_zip_2[pothole.findtext('zip')] += 1
 for zipcode, num in potholes_by_zip_2.most_common():

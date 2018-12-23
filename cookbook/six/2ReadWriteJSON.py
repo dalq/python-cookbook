@@ -9,10 +9,10 @@ data = {
     "shares": 100,
     "price": 12.34
 }
-with open('stocks.json', 'w') as f:
+with open('./res/stocks.json', 'w') as f:
     json.dump(data, f)
 
-with open('stocks.json', 'r') as f:
+with open('./res/stocks.json', 'r') as f:
     data = json.load(f)
 
 print(data)
